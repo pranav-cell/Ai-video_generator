@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraVideo — AI Faceless Video Generator (100% Free)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Navigation -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </div>
+      <div>
+        <h1>Aura<span>Video</span></h1>
+        <p class="tagline">Zero-Cost AI Faceless Video Studio</p>
+      </div>
+    </div>
+
+    <div class="header-badges">
+      <div class="badge status-badge">
+        <span class="dot pulse-green"></span> Edge-TTS <span>Free</span>
+      </div>
+      <div class="badge status-badge">
+        <span class="dot pulse-purple"></span> FLUX.1 Images <span>Free</span>
+      </div>
+      <div class="badge status-badge">
+        <span class="dot pulse-blue"></span> Apple Silicon FFmpeg
+      </div>
+      <button id="settingsBtn" class="btn-icon" title="API Keys & Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-layout">
+    <!-- Left Column: Generator Form -->
+    <section class="panel creator-panel">
+      <div class="panel-header">
+        <h2>Generate Faceless Video</h2>
+        <span class="panel-subtitle">Turn any idea into a cinematic video in minutes</span>
+      </div>
+
+      <form id="generatorForm" class="generator-form">
+        <!-- Topic Prompt Input -->
+        <div class="form-group">
+          <label for="topicInput">
+            <span>Video Topic or Concept</span>
+            <span class="label-hint">Be as specific or creative as you want</span>
+          </label>
+          <div class="input-wrapper">
+            <textarea id="topicInput" rows="3" placeholder="e.g. The Untold Secrets of the Bermuda Triangle and Ships that Vanished..." required></textarea>
+          </div>
+          <div class="preset-chips">
+            <span class="chip-label">Quick Ideas:</span>
+            <button type="button" class="chip" data-prompt="The Secret History of the Bermuda Triangle and Vanished Fleets">Bermuda Triangle</button>
+            <button type="button" class="chip" data-prompt="How Rome Fell: The 5 Decisive Mistakes of an Empire">Fall of Rome</button>
+            <button type="button" class="chip" data-prompt="Quantum Computing Explained: How Qubits Defy Everyday Physics">Quantum Tech</button>
+            <button type="button" class="chip" data-prompt="The Psychology of Wealth: Why 90% of People Stay Poor">Wealth Psychology</button>
+            <button type="button" class="chip" data-prompt="Mysteries of the Mariana Trench: What Lies in Earth's Deepest Abyss">Mariana Trench</button>
+          </div>
+        </div>
+
+        <!-- Target Duration & Aspect Ratio -->
+        <div class="form-row">
+          <div class="form-group col-half">
+            <label for="durationSelect">Duration</label>
+            <select id="durationSelect">
+              <option value="1" selected>1 Minute (Fast Demo ~8 scenes)</option>
+              <option value="3">3 Minutes (~20 scenes)</option>
+              <option value="5">5 Minutes (~35 scenes)</option>
+              <option value="10">10 Minutes (~70 scenes)</option>
+            </select>
+          </div>
+
+          <div class="form-group col-half">
+            <label for="aspectRatioSelect">Format & Aspect Ratio</label>
+            <select id="aspectRatioSelect">
+              <option value="16:9" selected>16:9 Landscape (YouTube standard)</option>
+              <option value="9:16">9:16 Vertical (Shorts, Reels, TikTok)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Voice & Background Music -->
+        <div class="form-row">
+          <div class="form-group col-half">
+            <label for="voiceSelect">AI Narrator Voice (Edge-TTS)</label>
+            <select id="voiceSelect">
+              <option value="en-US-ChristopherNeural" selected>Christopher (Deep Documentary - Male)</option>
+              <option value="en-US-GuyNeural">Guy (Casual & Tech - Male)</option>
+              <option value="en-US-JennyNeural">Jenny (Warm & Natural - Female)</option>
+              <option value="en-US-AriaNeural">Aria (Dynamic & Engaging - Female)</option>
+              <option value="en-GB-RyanNeural">Ryan (British Sophisticated - Male)</option>
+              <option value="en-IN-PrabhatNeural">Prabhat (Indian English Clear - Male)</option>
+            </select>
+          </div>
+
+          <div class="form-group col-half">
+            <label for="bgmMoodSelect">Background Music & Soundscape</label>
+            <select id="bgmMoodSelect">
+              <option value="cinematic" selected>Cinematic Deep Drone</option>
+              <option value="ambient">Atmospheric Ambient Resonance</option>
+              <option value="mystery">Dark Mystery Suspense</option>
+              <option value="chill">Warm Lo-fi Acoustic</option>
+              <option value="none">No Music (Voiceover Only)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Visual Style -->
+        <div class="form-group">
+          <label for="visualModeSelect">Visual Generation Style</label>
+          <select id="visualModeSelect">
+            <option value="ai_image" selected>Photorealistic AI Images (FLUX.1 + Ken Burns Motion) [100% Free]</option>
+            <option value="hybrid">Hybrid (Pexels Stock Clips + FLUX.1 Images)</option>
+            <option value="stock_broll">Stock Footage Only (Requires Free Pexels Key)</option>
+          </select>
+        </div>
+
+        <button type="submit" id="generateBtn" class="btn-primary">
+          <span class="btn-icon">⚡</span>
+          <span>Generate Full Video Now</span>
+        </button>
+      </form>
+
+      <!-- Generation Live Progress View -->
+      <div id="progressContainer" class="progress-box hidden">
+        <div class="progress-header">
+          <div class="pulse-ring"></div>
+          <div>
+            <h4 id="progressTitle">Crafting Your Video...</h4>
+            <p id="progressMessage">Initializing workflow...</p>
+          </div>
+          <span id="progressPercent" class="progress-num">0%</span>
+        </div>
+
+        <div class="progress-bar-bg">
+          <div id="progressBar" class="progress-bar-fill" style="width: 0%"></div>
+        </div>
+
+        <div class="steps-indicator">
+          <div class="step-node" id="step-script">
+            <div class="step-circle">1</div>
+            <span>Script</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step-node" id="step-voice">
+            <div class="step-circle">2</div>
+            <span>Voice</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step-node" id="step-visual">
+            <div class="step-circle">3</div>
+            <span>Visuals</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step-node" id="step-render">
+            <div class="step-circle">4</div>
+            <span>Render</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Column: Video Preview Stage -->
+    <section class="panel player-panel">
+      <div class="panel-header">
+        <h2>Video Player & Studio Output</h2>
+        <span id="videoDurationBadge" class="duration-badge hidden">00:00</span>
+      </div>
+
+      <div class="player-container" id="playerContainer">
+        <!-- Placeholder when no video generated yet -->
+        <div id="playerPlaceholder" class="player-placeholder">
+          <div class="placeholder-graphic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <line x1="2" y1="7" x2="7" y2="7"></line>
+              <line x1="2" y1="17" x2="7" y2="17"></line>
+              <line x1="17" y1="17" x2="22" y2="17"></line>
+              <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+          </div>
+          <h3>No Video Rendered Yet</h3>
+          <p>Configure your topic on the left and click <strong>Generate</strong> to watch your video render live.</p>
+        </div>
+
+        <!-- HTML5 Video Player -->
+        <video id="videoPlayer" class="video-element hidden" controls playsinline>
+          <source id="videoSource" src="" type="video/mp4">
+          <track id="videoTrack" label="English" kind="subtitles" srclang="en" default>
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Action Buttons below Player -->
+      <div id="playerActions" class="player-actions hidden">
+        <a id="downloadBtn" href="#" download class="btn-action btn-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download MP4
+        </a>
+        <button id="openSubtitlesBtn" class="btn-action btn-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          View Subtitles
+        </button>
+      </div>
+
+      <!-- Recent Generations History -->
+      <div class="history-section">
+        <h3>Generated Video Library</h3>
+        <div id="historyList" class="history-grid">
+          <p class="empty-history">No previous generations found.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Settings Modal (Optional Keys) -->
+  <div id="settingsModal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>API Keys & Engine Settings</h3>
+        <button id="closeSettingsBtn" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          Everything in AuraVideo works <strong>100% free with no keys required</strong>. You can optionally provide keys for enhanced quality:
+        </p>
+        <div class="form-group">
+          <label for="geminiKeyInput">
+            <span>Google Gemini API Key (Optional)</span>
+            <span class="label-link"><a href="https://aistudio.google.com/app/apikey" target="_blank">Get Free Key</a></span>
+          </label>
+          <input type="password" id="geminiKeyInput" placeholder="AIzaSy...">
+          <small>Leave empty to use the built-in free Pollinations LLM.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="pexelsKeyInput">
+            <span>Pexels Video API Key (Optional)</span>
+            <span class="label-link"><a href="https://www.pexels.com/api/" target="_blank">Get Free Key</a></span>
+          </label>
+          <input type="password" id="pexelsKeyInput" placeholder="563492ad6f91700001000001...">
+          <small>Enables real 4K stock video b-roll clips matching your keywords.</small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="saveSettingsBtn" class="btn-primary">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

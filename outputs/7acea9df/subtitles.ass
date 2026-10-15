@@ -1,0 +1,19 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,54,&H00FFFFFF,&H0000D4FF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,3.5,1.5,2,30,30,75,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:07.27,Default,,0,0,0,,A lone satellite drifts into a cosmic ocean, whispering mysteries that could rewrite humanity’s view of the universe.
+Dialogue: 0,0:00:07.27,0:00:14.59,Default,,0,0,0,,Beyond our reach lies a void filled with unheard frequencies, waiting for our instruments to pick up its silent symphony.
+Dialogue: 0,0:00:14.59,0:00:23.16,Default,,0,0,0,,High‑tech observatories, orbiting silently, scan the cosmos, unraveling particles that carry the secrets of primeval epochs.
+Dialogue: 0,0:00:23.16,0:00:31.44,Default,,0,0,0,,Listening through the quantum needles, we detect subtle tides in spacetime—signals that may reveal the universe’s hidden architecture.
+Dialogue: 0,0:00:31.44,0:00:40.30,Default,,0,0,0,,Dark energy, the invisible wind of the cosmos, accelerates galaxies, gliding across the fabric of reality like an unseen tide.
+Dialogue: 0,0:00:40.30,0:00:49.82,Default,,0,0,0,,Between stars, relics of ancient civilizations float—silent sentinels, perhaps, guiding future exploration into the final frontier.
+Dialogue: 0,0:00:49.82,0:00:57.46,Default,,0,0,0,,In the end, deep space may reveal that we are not observers, but participants in a grand, ever‑evolving tapestry.
