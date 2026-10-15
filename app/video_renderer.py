@@ -12,6 +12,7 @@ def render_scene_clip(
 ) -> Path:
     """
     Renders an individual scene's visual media to an MP4 clip with camera motion and exact duration.
+    The clip length matches the exact duration of the spoken sentence.
     """
     output_clip_path.parent.mkdir(parents=True, exist_ok=True)
     media_type = media_info.get("type", "image")
@@ -21,7 +22,6 @@ def render_scene_clip(
     total_frames = max(30, int(duration * fps))
 
     if media_type == "image":
-        # Configure motion formulas
         if motion == "zoom_out":
             zp_filter = f"zoompan=z='if(lte(zoom,1.0),1.22,max(1.0,zoom-0.0012))':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}:fps={fps}"
         elif motion == "pan_left":
@@ -71,10 +71,12 @@ def assemble_final_video(
     scene_clips: List[Path],
     master_audio_path: Path,
     srt_subtitles_path: Optional[Path],
-    output_video_path: Path
+    output_video_path: Path,
+    target_duration: Optional[float] = None
 ) -> Path:
     """
     Concatenates all visual clips, muxes master audio, and embeds subtitle tracks.
+    If target_duration is set (e.g. 60.0s for 1 min), strictly enforces the final video length.
     """
     output_video_path.parent.mkdir(parents=True, exist_ok=True)
     temp_dir = output_video_path.parent
@@ -87,19 +89,32 @@ def assemble_final_video(
             safe_path = str(clip.resolve()).replace("'", "'\\''")
             f.write(f"file '{safe_path}'\n")
 
-    # Step 1: Concatenate video streams
-    concat_cmd = [
-        "ffmpeg", "-y",
-        "-f", "concat",
-        "-safe", "0",
-        "-i", str(clips_list_file),
-        "-c:v", "libx264",
-        "-preset", "fast",
-        "-pix_fmt", "yuv420p",
-        "-an",
-        str(concat_video_file)
-    ]
-    subprocess.run(concat_cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # Step 1: Concatenate video streams (instant stream copy since clips have identical codec/fps)
+    try:
+        concat_cmd = [
+            "ffmpeg", "-y",
+            "-f", "concat",
+            "-safe", "0",
+            "-i", str(clips_list_file),
+            "-c:v", "copy",
+            "-an",
+            str(concat_video_file)
+        ]
+        subprocess.run(concat_cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except Exception:
+        # Fallback to re-encoding if stream copy encounters timestamp issues
+        concat_cmd_fallback = [
+            "ffmpeg", "-y",
+            "-f", "concat",
+            "-safe", "0",
+            "-i", str(clips_list_file),
+            "-c:v", "libx264",
+            "-preset", "ultrafast",
+            "-pix_fmt", "yuv420p",
+            "-an",
+            str(concat_video_file)
+        ]
+        subprocess.run(concat_cmd_fallback, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     # Step 2: Mux audio and optional subtitle track
     mux_cmd = [
@@ -114,18 +129,20 @@ def assemble_final_video(
             "-c:v", "copy",
             "-c:a", "aac",
             "-c:s", "mov_text",
-            "-metadata:s:s:0", "language=eng",
-            "-shortest",
-            str(output_video_path)
+            "-metadata:s:s:0", "language=eng"
         ])
     else:
         mux_cmd.extend([
             "-c:v", "copy",
-            "-c:a", "aac",
-            "-shortest",
-            str(output_video_path)
+            "-c:a", "aac"
         ])
 
+    if target_duration and target_duration > 0:
+        mux_cmd.extend(["-t", f"{target_duration:.2f}"])
+    else:
+        mux_cmd.extend(["-shortest"])
+
+    mux_cmd.append(str(output_video_path))
     subprocess.run(mux_cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     # Clean up temporary intermediary files

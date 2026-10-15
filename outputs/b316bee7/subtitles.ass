@@ -1,0 +1,22 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,54,&H00FFFFFF,&H0000D4FF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,3.5,1.5,2,30,30,75,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.28,Default,,0,0,0,,Every single night, the lonely young boy desperately wished he could stop time.
+Dialogue: 0,0:00:05.28,0:00:11.11,Default,,0,0,0,,Then one miraculous day, his heartfelt wish finally came true across the quiet room.
+Dialogue: 0,0:00:11.11,0:00:17.23,Default,,0,0,0,,He could completely freeze everything surrounding him, including the falling rain and rushing wind.
+Dialogue: 0,0:00:17.23,0:00:22.90,Default,,0,0,0,,At first, wielding this incredible cosmic power made him feel like an almighty god.
+Dialogue: 0,0:00:22.90,0:00:28.97,Default,,0,0,0,,He easily used his amazing ability to completely avoid all pain and difficult problems.
+Dialogue: 0,0:00:28.97,0:00:35.81,Default,,0,0,0,,However, after many peaceful days, he slowly noticed something truly terrifying happening around him.
+Dialogue: 0,0:00:35.81,0:00:42.19,Default,,0,0,0,,Every single time time stopped, someone he deeply loved lost another precious memory forever.
+Dialogue: 0,0:00:42.19,0:00:48.26,Default,,0,0,0,,Completely desperate now, he halted the entire world one last time to whisper his truth.
+Dialogue: 0,0:00:48.26,0:00:54.34,Default,,0,0,0,,He finally let time flow forward again, embracing the unpredictable rhythm of living life.
+Dialogue: 0,0:00:54.34,0:01:00.38,Default,,0,0,0,,Instead of living forever, he bravely chose to grow older alongside the people he loved.

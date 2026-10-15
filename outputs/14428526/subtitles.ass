@@ -1,0 +1,22 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,54,&H00FFFFFF,&H0000D4FF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,3.5,1.5,2,30,30,75,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:06.46,Default,,0,0,0,,For centuries, the enigmatic truth behind Every night, a lonely boy wished he could stop time.
+Dialogue: 0,0:00:06.46,0:00:09.48,Default,,0,0,0,,One day, his wish came true.
+Dialogue: 0,0:00:09.48,0:00:14.86,Default,,0,0,0,,He could freeze everything around him, the rain, the wind, even people.
+Dialogue: 0,0:00:14.86,0:00:17.90,Default,,0,0,0,,At first, he felt like a god.
+Dialogue: 0,0:00:17.90,0:00:23.30,Default,,0,0,0,,He used his power to win fights, avoid pain, and escape every problem.
+Dialogue: 0,0:00:23.30,0:00:27.00,Default,,0,0,0,,But slowly, he noticed something terrifying.
+Dialogue: 0,0:00:27.00,0:00:31.80,Default,,0,0,0,,Every time he stopped time, someone he loved forgot a memory of him.
+Dialogue: 0,0:00:31.80,0:00:35.50,Default,,0,0,0,,First, his best friend forgot their childhood.
+Dialogue: 0,0:00:35.50,0:00:38.54,Default,,0,0,0,,Then, his mother forgot his name.
+Dialogue: 0,0:00:38.54,0:00:43.90,Default,,0,0,0,,Desperate, he stopped time one final time and whispered, I want to stay with you.

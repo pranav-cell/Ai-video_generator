@@ -14,7 +14,7 @@ CACHE_DIR.mkdir(parents=True, exist_ok=True)
 STATIC_DIR.mkdir(parents=True, exist_ok=True)
 
 # Free / Optional API Keys
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6I_esuClU8tTXRFo5PeL8gIoiQawiL9JHwT2Bes1UHY8A")
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY", "")
 
 # Default Edge TTS Voices

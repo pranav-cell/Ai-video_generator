@@ -1,0 +1,102 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,54,&H00FFFFFF,&H0000D4FF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,3.5,1.5,2,30,30,75,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:08.57,Default,,0,0,0,,For centuries, the enigmatic truth behind Kaito is a lonely 17-year-old boy who discovers that he can stop time for ten seconds.
+Dialogue: 0,0:00:08.57,0:00:15.79,Default,,0,0,0,,One rainy evening, he uses this power to save Yuna, a girl from his school, from a fatal accident.
+Dialogue: 0,0:00:15.79,0:00:23.59,Default,,0,0,0,,But after saving her, he discovers something terrifying: every time he stops time, someone loses a memory of him.
+Dialogue: 0,0:00:23.59,0:00:28.78,Default,,0,0,0,,Initially, Kaito believes this is a small price to pay for helping others.
+Dialogue: 0,0:00:28.78,0:00:36.94,Default,,0,0,0,,However, as he continues using his ability to protect Yuna from mysterious accidents, his closest friends gradually forget him.
+Dialogue: 0,0:00:36.94,0:00:41.74,Default,,0,0,0,,Eventually, even his own family begins treating him like a stranger.
+Dialogue: 0,0:00:41.74,0:00:48.12,Default,,0,0,0,,Yuna is the only person who remembers him, and she becomes determined to discover why this is happening.
+Dialogue: 0,0:00:48.12,0:00:57.34,Default,,0,0,0,,While investigating the strange clock-shaped mark on Kaito's wrist, they uncover the existence of the Eternal Clock, an ancient force that controls time.
+Dialogue: 0,0:00:57.34,0:01:04.22,Default,,0,0,0,,Kaito's ability is connected to a fracture in reality, and every use of his power makes that fracture worse.
+Dialogue: 0,0:01:04.22,0:01:09.79,Default,,0,0,0,,Before they can understand the full truth, a mysterious man named Ren attacks them.
+Dialogue: 0,0:01:09.79,0:01:14.47,Default,,0,0,0,,He claims that Kaito's power will eventually destroy the entire city.
+Dialogue: 0,0:01:14.47,0:01:21.70,Default,,0,0,0,,Ren offers to remove Kaito's ability, but doing so would erase every memory and connection Kaito has ever had.
+Dialogue: 0,0:01:21.70,0:01:26.71,Default,,0,0,0,,Kaito refuses to surrender because he believes he can still control his power.
+Dialogue: 0,0:01:26.71,0:01:36.10,Default,,0,0,0,,Ren then reveals that he has already witnessed the destruction of the city in another timeline, and Kaito's repeated attempts to save people are bringing that future closer.
+Dialogue: 0,0:01:36.10,0:01:43.37,Default,,0,0,0,,As time begins breaking apart around them, Kaito and Yuna escape through the collapsing city while Ren pursues them.
+Dialogue: 0,0:01:43.37,0:01:52.78,Default,,0,0,0,,Each time Kaito stops time to save Yuna, he loses another precious memory: his childhood, his home, and eventually the moment he first met her.
+Dialogue: 0,0:01:52.78,0:01:58.30,Default,,0,0,0,,Yuna realizes that Kaito is slowly forgetting the very person he is trying to protect.
+Dialogue: 0,0:01:58.30,0:02:06.60,Default,,0,0,0,,She begs him to stop using his power, but Kaito knows that if he does nothing, thousands of people will die when the timeline collapses.
+Dialogue: 0,0:02:06.60,0:02:10.66,Default,,0,0,0,,They finally reach the Eternal Clock at the center of the city.
+Dialogue: 0,0:02:10.66,0:02:20.16,Default,,0,0,0,,Ren confronts them and reveals his true motivation: he once tried to save someone he loved by changing the past, but his actions destroyed his own timeline.
+Dialogue: 0,0:02:20.16,0:02:25.51,Default,,0,0,0,,Now he wants to erase time entirely so nobody will ever suffer loss again.
+Dialogue: 0,0:02:25.51,0:02:31.13,Default,,0,0,0,,Kaito understands Ren's pain but refuses to let grief destroy everyone's future.
+Dialogue: 0,0:02:31.13,0:02:36.82,Default,,0,0,0,,A final battle begins as the clock tower collapses and reality fractures around them.
+Dialogue: 0,0:02:36.82,0:02:42.55,Default,,0,0,0,,Kaito uses his remaining power to protect Yuna and stop Ren from destroying the clock.
+Dialogue: 0,0:02:42.55,0:02:51.79,Default,,0,0,0,,During the battle, Kaito discovers that he can permanently stop the collapsing timeline, but the cost is that he will disappear from the world's memories and records.
+Dialogue: 0,0:02:51.79,0:02:54.70,Default,,0,0,0,,Yuna begs him to find another way.
+Dialogue: 0,0:02:54.70,0:03:03.46,Default,,0,0,0,,Kaito searches his fading memories and realizes that, even though he can no longer remember her face clearly, he still knows he wants her to live.
+Dialogue: 0,0:03:03.46,0:03:06.38,Default,,0,0,0,,He stops time one final time.
+Dialogue: 0,0:03:06.38,0:03:09.41,Default,,0,0,0,,The entire city becomes silent.
+Dialogue: 0,0:03:09.41,0:03:12.19,Default,,0,0,0,,Falling debris hangs in the air.
+Dialogue: 0,0:03:12.19,0:03:14.83,Default,,0,0,0,,The shattered sky freezes.
+Dialogue: 0,0:03:14.83,0:03:20.88,Default,,0,0,0,,Kaito looks at Yuna and apologizes because he can no longer remember how they became friends.
+Dialogue: 0,0:03:20.88,0:03:27.41,Default,,0,0,0,,Yuna holds his hand and promises that she will remember their story, even if the entire world forgets him.
+Dialogue: 0,0:03:27.41,0:03:31.49,Default,,0,0,0,,Kaito uses the last of his power to repair the timeline.
+Dialogue: 0,0:03:31.49,0:03:38.83,Default,,0,0,0,,The city returns to normal, Ren disappears with the broken timeline, and Kaito vanishes into silver particles.
+Dialogue: 0,0:03:38.83,0:03:47.40,Default,,0,0,0,,Months later, Yuna continues living her life, writing down every memory she has of Kaito so that he will never be completely forgotten.
+Dialogue: 0,0:03:47.40,0:03:54.70,Default,,0,0,0,,One evening, while walking past the old clock tower, she hears someone repeat a sentence only Kaito used to say.
+Dialogue: 0,0:03:54.70,0:04:01.03,Default,,0,0,0,,She turns around and sees a boy with messy black hair and silver eyes standing beneath the streetlight.
+Dialogue: 0,0:04:01.03,0:04:02.93,Default,,0,0,0,,It is Kaito.
+Dialogue: 0,0:04:02.93,0:04:10.30,Default,,0,0,0,,He cannot remember his name or their past, but when he looks at Yuna, he feels an inexplicable sense of familiarity.
+Dialogue: 0,0:04:10.30,0:04:15.00,Default,,0,0,0,,With tears in her eyes, Yuna asks him whether they have met before.
+Dialogue: 0,0:04:15.00,0:04:30.05,Default,,0,0,0,,Kaito smiles and replies, “I don't remember you… but somehow, you feel like home.” The clock tower strikes thirteen times, and the mark on Kaito's wrist briefly glows, suggesting that the mystery of time is not completely over.
+Dialogue: 0,0:04:30.05,0:04:36.82,Default,,0,0,0,,End with the narrator saying: “Time may erase our memories, our names, and even our existence.
+Dialogue: 0,0:04:36.82,0:04:44.09,Default,,0,0,0,,But sometimes, a connection survives what the entire universe cannot remember.” Fade to black.
+Dialogue: 0,0:04:44.09,0:04:47.78,Default,,0,0,0,,has baffled the greatest explorers and thinkers.
+Dialogue: 0,0:04:47.78,0:04:54.24,Default,,0,0,0,,It all started in a time when early observations defied every conventional understanding of reality.
+Dialogue: 0,0:04:54.24,0:05:01.15,Default,,0,0,0,,Mysterious anomalies were documented, recording sudden events that left behind no trace or explanation.
+Dialogue: 0,0:05:01.15,0:05:07.75,Default,,0,0,0,,Investigators arrived with cutting-edge equipment, desperately searching for rational scientific answers.
+Dialogue: 0,0:05:07.75,0:05:14.35,Default,,0,0,0,,Deep beneath the surface, strange atmospheric signals began appearing on modern monitoring instruments.
+Dialogue: 0,0:05:14.35,0:05:21.65,Default,,0,0,0,,While some experts blamed natural environmental extremes, others pointed toward far more mysterious forces.
+Dialogue: 0,0:05:21.65,0:05:28.22,Default,,0,0,0,,Recent satellite scans finally revealed unexpected structural patterns buried in the uncharted depths.
+Dialogue: 0,0:05:28.22,0:05:34.20,Default,,0,0,0,,Photographic evidence collected from the expedition shocked the international scientific community.
+Dialogue: 0,0:05:34.20,0:05:40.44,Default,,0,0,0,,Even now, leading researchers fiercely debate what these groundbreaking discoveries actually mean.
+Dialogue: 0,0:05:40.44,0:05:48.72,Default,,0,0,0,,One undeniable fact remains: Kaito is a lonely 17-year-old boy who discovers that he can stop time for ten seconds.
+Dialogue: 0,0:05:48.72,0:05:55.94,Default,,0,0,0,,One rainy evening, he uses this power to save Yuna, a girl from his school, from a fatal accident.
+Dialogue: 0,0:05:55.94,0:06:03.74,Default,,0,0,0,,But after saving her, he discovers something terrifying: every time he stops time, someone loses a memory of him.
+Dialogue: 0,0:06:03.74,0:06:08.93,Default,,0,0,0,,Initially, Kaito believes this is a small price to pay for helping others.
+Dialogue: 0,0:06:08.93,0:06:17.09,Default,,0,0,0,,However, as he continues using his ability to protect Yuna from mysterious accidents, his closest friends gradually forget him.
+Dialogue: 0,0:06:17.09,0:06:21.89,Default,,0,0,0,,Eventually, even his own family begins treating him like a stranger.
+Dialogue: 0,0:06:21.89,0:06:28.27,Default,,0,0,0,,Yuna is the only person who remembers him, and she becomes determined to discover why this is happening.
+Dialogue: 0,0:06:28.27,0:06:37.49,Default,,0,0,0,,While investigating the strange clock-shaped mark on Kaito's wrist, they uncover the existence of the Eternal Clock, an ancient force that controls time.
+Dialogue: 0,0:06:37.49,0:06:44.38,Default,,0,0,0,,Kaito's ability is connected to a fracture in reality, and every use of his power makes that fracture worse.
+Dialogue: 0,0:06:44.38,0:06:49.94,Default,,0,0,0,,Before they can understand the full truth, a mysterious man named Ren attacks them.
+Dialogue: 0,0:06:49.94,0:06:54.62,Default,,0,0,0,,He claims that Kaito's power will eventually destroy the entire city.
+Dialogue: 0,0:06:54.62,0:07:01.85,Default,,0,0,0,,Ren offers to remove Kaito's ability, but doing so would erase every memory and connection Kaito has ever had.
+Dialogue: 0,0:07:01.85,0:07:06.86,Default,,0,0,0,,Kaito refuses to surrender because he believes he can still control his power.
+Dialogue: 0,0:07:06.86,0:07:16.25,Default,,0,0,0,,Ren then reveals that he has already witnessed the destruction of the city in another timeline, and Kaito's repeated attempts to save people are bringing that future closer.
+Dialogue: 0,0:07:16.25,0:07:23.52,Default,,0,0,0,,As time begins breaking apart around them, Kaito and Yuna escape through the collapsing city while Ren pursues them.
+Dialogue: 0,0:07:23.52,0:07:32.93,Default,,0,0,0,,Each time Kaito stops time to save Yuna, he loses another precious memory: his childhood, his home, and eventually the moment he first met her.
+Dialogue: 0,0:07:32.93,0:07:38.45,Default,,0,0,0,,Yuna realizes that Kaito is slowly forgetting the very person he is trying to protect.
+Dialogue: 0,0:07:38.45,0:07:46.75,Default,,0,0,0,,She begs him to stop using his power, but Kaito knows that if he does nothing, thousands of people will die when the timeline collapses.
+Dialogue: 0,0:07:46.75,0:07:50.81,Default,,0,0,0,,They finally reach the Eternal Clock at the center of the city.
+Dialogue: 0,0:07:50.81,0:08:00.31,Default,,0,0,0,,Ren confronts them and reveals his true motivation: he once tried to save someone he loved by changing the past, but his actions destroyed his own timeline.
+Dialogue: 0,0:08:00.31,0:08:05.66,Default,,0,0,0,,Now he wants to erase time entirely so nobody will ever suffer loss again.
+Dialogue: 0,0:08:05.66,0:08:11.28,Default,,0,0,0,,Kaito understands Ren's pain but refuses to let grief destroy everyone's future.
+Dialogue: 0,0:08:11.28,0:08:16.97,Default,,0,0,0,,A final battle begins as the clock tower collapses and reality fractures around them.
+Dialogue: 0,0:08:16.97,0:08:22.70,Default,,0,0,0,,Kaito uses his remaining power to protect Yuna and stop Ren from destroying the clock.
+Dialogue: 0,0:08:22.70,0:08:31.94,Default,,0,0,0,,During the battle, Kaito discovers that he can permanently stop the collapsing timeline, but the cost is that he will disappear from the world's memories and records.
+Dialogue: 0,0:08:31.94,0:08:34.85,Default,,0,0,0,,Yuna begs him to find another way.
+Dialogue: 0,0:08:34.85,0:08:43.61,Default,,0,0,0,,Kaito searches his fading memories and realizes that, even though he can no longer remember her face clearly, he still knows he wants her to live.
+Dialogue: 0,0:08:43.61,0:08:46.54,Default,,0,0,0,,He stops time one final time.
+Dialogue: 0,0:08:46.54,0:08:49.56,Default,,0,0,0,,The entire city becomes silent.
+Dialogue: 0,0:08:49.56,0:08:52.34,Default,,0,0,0,,Falling debris hangs in the air.
+Dialogue: 0,0:08:52.34,0:08:54.98,Default,,0,0,0,,The shattered sky freezes.
+Dialogue: 0,0:08:54.98,0:09:01.03,Default,,0,0,0,,Kaito looks at Yuna and apologizes because he can no longer remember how they became friends.
+Dialogue: 0,0:09:01.03,0:09:07.56,Default,,0,0,0,,Yuna holds his hand and promises that she will remember their story, even if the entire world forgets him.
+Dialogue: 0,0:09:07.56,0:09:11.64,Default,,0,0,0,,Kaito uses the last of his power to repair the timeline.
+Dialogue: 0,0:09:11.64,0:09:18.98,Default,,0,0,0,,The city returns to normal, Ren disappears with the broken timeline, and Kaito vanishes into silver particles.
+Dialogue: 0,0:09:18.98,0:09:27.55,Default,,0,0,0,,Months later, Yuna continues living her life, writing down every memory she has of Kaito so that he will never be completely forgotten.
+Dialogue: 0,0:09:27.55,0:09:34.85,Default,,0,0,0,,One evening, while walking past the old clock tower, she hears someone repeat a sentence only Kaito used to say.

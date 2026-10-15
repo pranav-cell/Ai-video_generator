@@ -29,13 +29,13 @@
 
     <div class="header-badges">
       <div class="badge status-badge">
-        <span class="dot pulse-green"></span> Edge-TTS <span>Free</span>
+        <span class="dot pulse-green"></span> 1 Image / Sentence <span>Synced</span>
       </div>
       <div class="badge status-badge">
-        <span class="dot pulse-purple"></span> FLUX.1 Images <span>Free</span>
+        <span class="dot pulse-purple"></span> FLUX.1 Photorealistic <span>8K</span>
       </div>
       <div class="badge status-badge">
-        <span class="dot pulse-blue"></span> Apple Silicon FFmpeg
+        <span class="dot pulse-blue"></span> Exact 60s <span>Calibrated</span>
       </div>
       <button id="settingsBtn" class="btn-icon" title="API Keys & Settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -78,12 +78,12 @@
         <!-- Target Duration & Aspect Ratio -->
         <div class="form-row">
           <div class="form-group col-half">
-            <label for="durationSelect">Duration</label>
+            <label for="durationSelect">Duration (Exact Calibration)</label>
             <select id="durationSelect">
-              <option value="1" selected>1 Minute (Fast Demo ~8 scenes)</option>
-              <option value="3">3 Minutes (~20 scenes)</option>
-              <option value="5">5 Minutes (~35 scenes)</option>
-              <option value="10">10 Minutes (~70 scenes)</option>
+              <option value="1" selected>1 Minute (Exact 60s • 10 Sentence Cuts)</option>
+              <option value="3">3 Minutes (Exact 180s • ~28 Sentence Cuts)</option>
+              <option value="5">5 Minutes (Exact 300s • ~48 Sentence Cuts)</option>
+              <option value="10">10 Minutes (Exact 600s • ~95 Sentence Cuts)</option>
             </select>
           </div>
 
@@ -122,14 +122,25 @@
           </div>
         </div>
 
-        <!-- Visual Style -->
-        <div class="form-group">
-          <label for="visualModeSelect">Visual Generation Style</label>
-          <select id="visualModeSelect">
-            <option value="ai_image" selected>Photorealistic AI Images (FLUX.1 + Ken Burns Motion) [100% Free]</option>
-            <option value="hybrid">Hybrid (Pexels Stock Clips + FLUX.1 Images)</option>
-            <option value="stock_broll">Stock Footage Only (Requires Free Pexels Key)</option>
-          </select>
+        <!-- Visual Engine & Art Style -->
+        <div class="form-row">
+          <div class="form-group col-half">
+            <label for="artStyleSelect">Art & Character Style Preset</label>
+            <select id="artStyleSelect">
+              <option value="anime" selected>Simple Anime (Clean 2D Line Art & Vibrant Cel Shading)</option>
+              <option value="cinematic">Cinematic Photorealistic (8K Ultra-Sharp)</option>
+              <option value="fantasy">Dark Fantasy / Concept Art</option>
+              <option value="cyberpunk">Cyberpunk Futuristic Sci-Fi</option>
+            </select>
+          </div>
+
+          <div class="form-group col-half">
+            <label for="visualModeSelect">Visual Generation Engine</label>
+            <select id="visualModeSelect">
+              <option value="local_ai" selected>Local AI Diffusion (Apple M5 GPU • Offline)</option>
+              <option value="cloud_ai">Cloud AI Diffusion (High-Speed • Zero Cost)</option>
+            </select>
+          </div>
         </div>
 
         <button type="submit" id="generateBtn" class="btn-primary">
@@ -173,6 +184,18 @@
             <div class="step-circle">4</div>
             <span>Render</span>
           </div>
+        </div>
+
+        <!-- Real-Time AI Generation Live Reel -->
+        <div id="liveGenerationContainer" class="live-generation-container hidden">
+          <div class="live-gen-header">
+            <div class="live-indicator">
+              <span class="live-pulse"></span>
+              <h5>Real-Time Local GPU Generation</h5>
+            </div>
+            <span id="liveSceneCountBadge" class="live-badge">0 Scenes Ready</span>
+          </div>
+          <div id="liveScenesGallery" class="live-scenes-gallery"></div>
         </div>
       </div>
     </section>

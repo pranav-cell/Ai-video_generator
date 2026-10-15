@@ -27,10 +27,11 @@ class GenerateRequest(BaseModel):
     duration_minutes: int = 1
     aspect_ratio: str = "16:9"
     voice: str = DEFAULT_VOICE
-    visual_mode: str = "ai_image"
+    visual_mode: str = "local_ai"
     bgm_mood: str = "cinematic"
     gemini_api_key: Optional[str] = None
     pexels_api_key: Optional[str] = None
+    art_style: str = "anime"
 
 @app.get("/api/voices")
 def list_voices():
@@ -55,7 +56,8 @@ async def start_generation(req: GenerateRequest, background_tasks: BackgroundTas
         bgm_mood=req.bgm_mood,
         gemini_api_key=req.gemini_api_key,
         pexels_api_key=req.pexels_api_key,
-        job_id=job_id
+        job_id=job_id,
+        art_style=req.art_style
     )
     
     return {"job_id": job_id, "status": "queued"}
@@ -71,6 +73,15 @@ def check_status(job_id: str):
         if meta_file.exists() and video_file.exists():
             with open(meta_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
+            scenes_count = data.get("scenes_count", 0)
+            scenes_data = [
+                {
+                    "scene_id": i + 1,
+                    "image_url": f"/api/scene_image/{job_id}/{i+1}",
+                    "status": "ready"
+                }
+                for i in range(scenes_count)
+            ]
             return {
                 "job_id": job_id,
                 "status": "completed",
@@ -79,10 +90,18 @@ def check_status(job_id: str):
                 "video_url": f"/api/video/{job_id}/stream",
                 "vtt_url": f"/api/video/{job_id}/subtitles.vtt",
                 "title": data.get("title", "Generated Video"),
-                "total_duration": data.get("duration_seconds", 0)
+                "total_duration": data.get("duration_seconds", 0),
+                "scenes_data": scenes_data
             }
         raise HTTPException(status_code=404, detail="Job not found")
     return job
+
+@app.get("/api/scene_image/{job_id}/{scene_id}")
+def get_scene_image(job_id: str, scene_id: int):
+    img_path = OUTPUTS_DIR / job_id / "scenes" / f"scene_{scene_id:03d}_visual.jpg"
+    if not img_path.exists():
+        raise HTTPException(status_code=404, detail="Scene image not ready yet")
+    return FileResponse(img_path, media_type="image/jpeg")
 
 @app.get("/api/video/{job_id}/stream")
 def stream_video(job_id: str):

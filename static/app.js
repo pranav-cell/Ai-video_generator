@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const voiceSelect = document.getElementById("voiceSelect");
   const bgmMoodSelect = document.getElementById("bgmMoodSelect");
   const visualModeSelect = document.getElementById("visualModeSelect");
+  const artStyleSelect = document.getElementById("artStyleSelect");
   const generateBtn = document.getElementById("generateBtn");
 
   const progressContainer = document.getElementById("progressContainer");
@@ -30,6 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const openSubtitlesBtn = document.getElementById("openSubtitlesBtn");
   const videoDurationBadge = document.getElementById("videoDurationBadge");
   const historyList = document.getElementById("historyList");
+
+  const liveGenerationContainer = document.getElementById("liveGenerationContainer");
+  const liveScenesGallery = document.getElementById("liveScenesGallery");
+  const liveSceneCountBadge = document.getElementById("liveSceneCountBadge");
+  const renderedScenes = new Set();
 
   // Settings Modal Elements
   const settingsBtn = document.getElementById("settingsBtn");
@@ -79,12 +85,19 @@ document.addEventListener("DOMContentLoaded", () => {
     progressMessage.textContent = "Connecting to generation engine...";
     resetStepNodes();
 
+    // Reset real-time live gallery
+    renderedScenes.clear();
+    if (liveScenesGallery) liveScenesGallery.innerHTML = "";
+    if (liveGenerationContainer) liveGenerationContainer.classList.add("hidden");
+    if (liveSceneCountBadge) liveSceneCountBadge.textContent = "0 Scenes Ready";
+
     const payload = {
       topic: topic,
       duration_minutes: parseInt(durationSelect.value, 10),
       aspect_ratio: aspectRatioSelect.value,
       voice: voiceSelect.value,
       visual_mode: visualModeSelect.value,
+      art_style: artStyleSelect ? artStyleSelect.value : "anime",
       bgm_mood: bgmMoodSelect.value,
       gemini_api_key: localStorage.getItem("auravideo_gemini_key") || null,
       pexels_api_key: localStorage.getItem("auravideo_pexels_key") || null
@@ -164,6 +177,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         updateStepsByStatus(data.status);
 
+        // Stream real-time AI scenes into the live gallery as they are produced by local GPU
+        if (data.scenes_data && data.scenes_data.length > 0) {
+          if (liveGenerationContainer) liveGenerationContainer.classList.remove("hidden");
+          const totalTarget = data.scenes_count || data.scenes_data.length;
+          if (liveSceneCountBadge) {
+            liveSceneCountBadge.textContent = `${data.scenes_data.length} / ${totalTarget} Scenes Ready`;
+          }
+
+          data.scenes_data.forEach(sc => {
+            if (!renderedScenes.has(sc.scene_id)) {
+              renderedScenes.add(sc.scene_id);
+              if (liveScenesGallery) {
+                const card = document.createElement("div");
+                card.className = "live-scene-card";
+                card.innerHTML = `
+                  <img src="${sc.image_url}" alt="Scene ${sc.scene_id}" class="live-scene-img" loading="lazy">
+                  <span class="live-scene-tag">Scene #${sc.scene_id}</span>
+                  <div class="live-scene-text">${sc.narration || ''}</div>
+                `;
+                liveScenesGallery.appendChild(card);
+                card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              }
+            }
+          });
+        }
+
         if (data.status === "completed") {
           clearInterval(pollInterval);
           onGenerationComplete(data);
@@ -174,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (e) {
         console.error("Polling error:", e);
       }
-    }, 1200);
+    }, 1000);
   }
 
   function onGenerationComplete(data) {
